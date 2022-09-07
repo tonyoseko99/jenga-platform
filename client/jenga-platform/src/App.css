@@ -196,6 +196,14 @@ body {
   text-decoration: none;
 }
 
+.card div{
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .card img{
   height: 200px;
   width: 200px;
@@ -207,13 +215,25 @@ body {
   width: 400px;
   font-size: 20px;
   text-decoration: none;
-  text-align: left;
+  text-align: center;
 }
 .card p{
   width: 400px;
   height: 200px;
   text-align: left;
   line-height: 20px;
+}
+
+.card button{
+  padding: 10px;
+  font-size: 18px
+}
+
+.card button:hover{
+  background: #282c34;
+  color: white;
+  border-radius: 5px solid white;
+  border: none;
 }
 
 /* footer */

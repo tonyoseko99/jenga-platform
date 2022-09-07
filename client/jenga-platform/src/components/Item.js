@@ -13,8 +13,10 @@ function Item({item}) {
       <div className="card" key={item.id}>
         <img src={item.image} alt={item.title}></img>
         <h2>{item.title}</h2>
-        <p>{item.description}</p>
-        <button>View Item</button>
+        <div>
+            <h3>{item.price} KES</h3>
+            <button>View Item</button>
+        </div>
       </div>
   );
 }

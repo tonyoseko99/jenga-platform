@@ -17,5 +17,19 @@ class ApplicationController < Sinatra::Base
       products = Product.find(params[:id])
       products.to_json
     end
+
+    # sort in descending order
+    get "/products?sort=desc" do
+      products = Product.find_by(name: :desc)
+      products.to_json
+    end
+
+    # update product
+
+    # update review
+
+    # delete review
+
+    
   
 end

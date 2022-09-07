@@ -1,15 +1,11 @@
 import React from "react";
 
-function Navbar({ setToken }) {
-  const logoutHandler = () => {
-    setToken("");
-    localStorage.clear();
-  };
+function Navbar() {
   return (
     <div className="main">
       <nav className="navbar">
         <h1>Jenga Shop</h1>
-        <button onClick={() => logoutHandler()}>Logout</button>
+        <button>Logout</button>
       </nav>
     </div>
   );

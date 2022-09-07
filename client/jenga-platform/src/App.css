@@ -184,7 +184,6 @@ body {
   flex-direction: row;
   flex-flow: row wrap;
   align-items: center;
-  
 }
 
 .card{
@@ -197,17 +196,11 @@ body {
   text-decoration: none;
 }
 
-.card div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
-
 .card img{
   height: 200px;
   width: 200px;
 }
+
 .card h2{
   height: 55px;
   border-bottom: 1px solid black;

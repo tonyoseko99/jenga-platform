@@ -17,25 +17,17 @@ function Items() {
     setSearchItems(items);
   }, [items]);
   return (
-    <div className="card-container">
-      <div className="card">
+    
+      <div className="card-container">
         {items.map((item) => {
           return (
             <div className="container" key={item.id}>
-              <img src={item.image} alt="title"></img>
-              <h2>{item.title}</h2>
-              <p>{item.description}</p>
-              <div>
-                <h3>price: ${item.price}</h3>
-                <Link to={`/item/${item.id}`} onClick={() => <Item key={item.id} item={item} />}>
-                  Add to Cart
-                </Link>
-              </div>
+              <Item item={item} />
             </div>
           );
         })}
       </div>
-    </div>
+    
   );
 }
 export default Items;

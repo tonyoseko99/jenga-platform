@@ -3,9 +3,10 @@ import Items from "./Items";
 
 function Home() {
   return (
-    <>
-      <h1>Home Page</h1>
-    </>
+    <div className="main-container">
+      <h2>Welcome to Jenga Shop</h2>
+      <button className="shopping-btn" href="#Items">Shop</button>
+    </div>
   );
 }
 export default Home;

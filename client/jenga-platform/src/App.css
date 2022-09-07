@@ -52,10 +52,41 @@ body {
   border-bottom: 4px solid black;
 }
 
+.main-container{
+  height: 90vh;
+  background-image: url("https://images.unsplash.com/photo-1523381294911-8d3cead13475?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  background-size: cover;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-container h2{
+  font-size: 70px;
+  color: white;
+}
+
+.main-container button{
+  background: #282c34;
+  width: 150px;
+  padding: 10px;
+  color: white;
+  font-size: 25px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.main-container button:hover{
+  background: white;
+  color: #282c34;
+  border-radius: 6px solid black;
+}
+
 .navbar {
   background: black;
   color: #EDE5F3;
-  padding: 10px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -243,6 +274,6 @@ body {
   color: white;
   padding: 10px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 0;
   margin-bottom: 0;
 }

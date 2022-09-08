@@ -20,6 +20,8 @@ function Item() {
       <div>
         <h2>{item.title}</h2>
         <p>{item.description}</p>
+        <p><em>{item.price} KES</em></p>
+        <p>Rating: {item.rating && item.rating.rate && item.rating.count}</p>
         <button>Add to Cart</button>
       </div>
     </div>

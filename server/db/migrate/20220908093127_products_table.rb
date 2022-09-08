@@ -4,6 +4,7 @@ class ProductsTable < ActiveRecord::Migration[6.1]
       t.string :title
       t.string :description
       t.float :price
+      t.integer :supplier_id
     end
   end
 end

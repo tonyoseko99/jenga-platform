@@ -6,11 +6,13 @@ function Item() {
   const [item, setItem] = useState([]);
 
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/${id}`)
+    fetch(`https://fakestoreapi.com/reviews`)
       .then((response) => response.json())
       .then((response) => {
         console.log(response);
-        setItem(response);
+        if (response.product_id === id){
+            setItem(response)
+        }
       });
   }, []);
 

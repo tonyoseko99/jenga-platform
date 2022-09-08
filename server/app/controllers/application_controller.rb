@@ -1,10 +1,5 @@
 class ApplicationController < Sinatra::Base
     set :default_content_type, 'application/json'
-    
-    # homepage
-    get "/" do
-      "welcome to the homepage!!"
-    end
 
     # default route products
     get "/products" do
@@ -18,11 +13,34 @@ class ApplicationController < Sinatra::Base
       products.to_json
     end
 
-    # sort in descending order
-    get "/products?sort=desc" do
-      products = Product.find_by(name: :desc)
-      products.to_json
+    # get all reviews
+    get "/reviews" do
+      reviews = Review.all
+      reviews.to_json
     end
+
+    # get review by id
+    get "/reviews/:product_id" do
+      review = Review.find(params[:product_id])
+      review.to_json
+    end
+
+    # get all users
+    get "/users" do
+      users = User.all
+      users.to_json
+    end
+
+    # get user by id
+    get "/users/:id" do
+      user = User.find(params[:id])
+      user.to_json
+    end
+
+    # post user
+    
+
+
 
     # update product
 

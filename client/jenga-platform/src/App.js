@@ -9,12 +9,11 @@ import Item from "./components/Item";
 import Cart from "./components/Cart";
 
 function App() {
-  const [token, setToken] = useState(localStorage.getItem("userToken") ?? null);
   return (
     <div className="root">
       
       <Router>
-      <Navbar setToken={setToken} />
+      <Navbar/>
         <Routes>
         <Route exact path="/" element= {<Home />} />
           <Route path="/items" element={<Items />} />

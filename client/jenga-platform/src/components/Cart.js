@@ -16,18 +16,12 @@ function Cart() {
   return (
     <div className="container">
       {items.map((item) => {
-        const count = 0;
-        count += item.price
-
         return (
           <>
             <div className="card-cart" key={item.id}>
               <h2>{item.title}</h2>
               <img src={item.image_url} alt={item.title}></img>
               <h2>{item.price}</h2>
-            </div>
-            <div>
-              <h2>Items total: {count}</h2>
             </div>
           </>
         );

@@ -14,16 +14,20 @@ function Cart() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container-card">
+      <h1>Cart Items</h1>
       {items.map((item) => {
         return (
-          <>
-            <div className="card-cart" key={item.id}>
-              <h2>{item.title}</h2>
+          <div className="card-container" key={item.id}>
+            <div className="card-cart">
               <img src={item.image_url} alt={item.title}></img>
-              <h2>{item.price}</h2>
+              <div>
+                <h2>{item.title}</h2>
+                <h3>{item.price} KES</h3>
+              </div>
             </div>
-          </>
+            <br></br>
+          </div>
         );
       })}
     </div>

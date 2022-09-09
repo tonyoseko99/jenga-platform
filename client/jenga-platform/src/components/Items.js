@@ -7,7 +7,6 @@ function Items({item}) {
   return (
 
       <div className="card-container">
-          return (
             <div className="container" key={item.id}>
               <div className="card">
                 <img src={item.image_url} alt={item.title}></img>
@@ -23,7 +22,6 @@ function Items({item}) {
                 </div>
               </div>
             </div>
-          );
         
       </div>
   );

@@ -23,7 +23,7 @@ function Item() {
       price,
       image_url
     }).then(()=> {
-      alert("product posted")
+      alert("product added to cart")
     }).catch((error)=>{console.log(error)})
   }
 
@@ -42,11 +42,12 @@ function Item() {
       <img src={item.image_url} alt={item.title}></img>
       <div>
         <h2>{item.title}</h2>
+        <hr></hr>
         <p>{item.description}</p>
         <p>
-          <em>{item.price} KES</em>
+          <strong>{item.price} KES</strong>
         </p>
-        <p>Rating: {item.rating && item.rating.rate && item.rating.count}</p>
+        
         <button onClick={() => handleClick(item)}>Add to Cart</button>
       </div>
     </div>

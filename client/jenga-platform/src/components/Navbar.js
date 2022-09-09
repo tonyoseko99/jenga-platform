@@ -6,7 +6,7 @@ function Navbar() {
     <div className="main">
       <nav className="navbar">
         <h1>Jenga Shop</h1>
-        <a href="/carts"><FaCartArrowDown /></a>
+        <a href="/carts"><FaCartArrowDown /> Cart</a>
       </nav>
     </div>
   );

@@ -25,6 +25,7 @@ function Cart() {
                 <h2>{item.title}</h2>
                 <h3>{item.price} KES</h3>
               </div>
+              <button>Remove Item</button>
             </div>
             <br></br>
           </div>

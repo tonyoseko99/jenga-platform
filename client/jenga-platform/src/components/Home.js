@@ -17,12 +17,13 @@ function Home() {
     setSearchItems(items);
   }, [items]);
   return (
-    <>
+    <div className="app-container">
       <div className="main-container">
         <h2>Welcome to Jenga Shop</h2>
-        <Link to={`items`} onClick={() => <Items />}>
+        {/* <Link to={`items`} onClick={() => <Items />}>
           <button>Shop</button>
-        </Link>
+        </Link> */}
+        <a href="#search-input"><button>Shop</button></a>
       </div>
 
       <div className="input">
@@ -40,12 +41,12 @@ function Home() {
         />
       </div>
 
-      <div className="card-container">
+      <div className="card-container" id="card-container">
         {searchItems.map((item) => {
           return <Items item={item} key={item.id} />;
         })}
       </div>
-    </>
+    </div>
   );
 }
 export default Home;

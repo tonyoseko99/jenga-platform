@@ -311,6 +311,19 @@ body {
   color: #282c34;
 }
 
+/* cart card */
+.card-cart{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.card-cart img{
+  height: 200px;
+  width: 25%;
+}
+
 
 /* footer */
 .footer {

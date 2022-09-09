@@ -47,16 +47,50 @@ class ApplicationController < Sinatra::Base
       )
       product.to_json
     end
-    
 
+    # post to cart
+    post "/carts" do
+      product = Cart.create(
+        title: params[:title],
+        description: params[:description],
+        image_url: params[:image_url],
+        price: params[:price],
+      )
+      product.to_json
+    end
 
+    # get items from cart
+    get "/carts" do
+      products = Cart.all
+      products.to_json
+    end
 
-    # update product
+    # delete item from cart
+    delete "/carts/:id" do
+      products = Cart.find(params[:id])
+      products.to_json
+    end
 
-    # update review
+    # get users
+    get "/users" do
+      users = User.all
+      users.to_json
+    end
 
-    # delete review
+    get "/users/:id" do
+      users = User.find(params[:id])
+      users.to_json
+    end
 
+    # post users
+    post "/users" do
+      user = User.create(
+        username: params[:username],
+        email: params[:email],
+        password: params[:password]
+      )
+      user.to_json
+    end
     
   
 end

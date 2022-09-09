@@ -1,22 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Item from "./Item";
 
 function Items({item}) {
   
   return (
-    // search functionality
-    <>
-    
-
-      {/* <div className="card-container">
-        {searchItems.map((item) => {
-          return <Items item={item} key={item.id} />;
-        })}
-      </div> */}
 
       <div className="card-container">
-        {/* {items.map((item) => { */}
           return (
             <div className="container" key={item.id}>
               <div className="card">
@@ -36,7 +26,6 @@ function Items({item}) {
           );
         
       </div>
-    </>
   );
 }
 export default Items;

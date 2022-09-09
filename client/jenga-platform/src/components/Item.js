@@ -17,7 +17,7 @@ function Item() {
     const description = item.description
     const image_url = item.image_url
 
-    axios.post("http://localhost:9292/products", {
+    axios.post("http://localhost:9292/carts", {
       title,
       description,
       price,
@@ -30,7 +30,7 @@ function Item() {
   
 
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/${id}`)
+    fetch(`http://localhost:9292/products/${id}`)
       .then((response) => response.json())
       .then((response) => {
         setItem(response);
@@ -39,7 +39,7 @@ function Item() {
 
   return (
     <div className="card-info">
-      <img src={item.image} alt={item.title}></img>
+      <img src={item.image_url} alt={item.title}></img>
       <div>
         <h2>{item.title}</h2>
         <p>{item.description}</p>

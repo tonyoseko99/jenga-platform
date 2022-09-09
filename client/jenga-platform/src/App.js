@@ -6,17 +6,20 @@ import Footer from "./components/Footer";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Items from "./components/Items";
 import Item from "./components/Item";
+import Cart from "./components/Cart";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("userToken") ?? null);
   return (
     <div className="root">
-      <Navbar />
+      
       <Router>
+      <Navbar setToken={setToken} />
         <Routes>
-          <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element= {<Home />} />
           <Route path="/items" element={<Items />} />
           <Route path="/items/:id" element={<Item />} />
+          <Route path="/carts" element={<Cart />} />
         </Routes>
       </Router>
       <Footer />

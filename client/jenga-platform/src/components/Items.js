@@ -11,7 +11,7 @@ function Items({ item }) {
         <div>
           <h3>{item.price} KES</h3>
           <Link to={`/items/${item.id}`} onClick={() => <Item key={item.id} />}>
-            <button>Shop</button>
+            <button>View</button>
           </Link>
         </div>
       </div>

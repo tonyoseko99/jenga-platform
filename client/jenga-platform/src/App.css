@@ -157,48 +157,20 @@ body {
 }
 
 /* login form */
-.login{
-  height: 80vh;
-  width: 100%;
+.login-form form{
+  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 100px 0;
-}
-
-.login h2{
-  text-align: center;
-  font-size: 34px;
-}
-
-.login-form{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 10px;
+  justify-content: center;
 }
 
 .login-form input{
-  width: 300px;
+  width: 20%;
   padding: 10px;
-  font-size: 15px;
-  margin: 10px 0;
 }
 
-.login-form button{
-  padding: 10px;
-  margin: 10px 0;
-  background-color: #282c34;
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.login-form small{
-  color: red;
-  font-size: 15px;
-  text-align: center;
-}
+/* end of login form */
 
 .container{
   display: flex;

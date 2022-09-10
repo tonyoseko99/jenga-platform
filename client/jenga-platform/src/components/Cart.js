@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from 'axios';
 
 function Cart() {
+  const { id } = useParams();
   const [items, setItems] = useState([]);
+  const [deleteItem, setDeletedItem] = useState([]);
 
-  // fetch items from cart
+  // fetch items from cart db table
   useEffect(() => {
     fetch("http://localhost:9292/carts")
       .then((response) => response.json())
@@ -12,6 +16,24 @@ function Cart() {
         setItems(response);
       });
   }, []);
+
+  // delete item from cart
+  const handleDelete = (item) => {
+    console.log(item);
+    const title = item.title
+    const price = item.price
+    const description = item.description
+    const image_url = item.image_url
+
+    axios.delete(`http://localhost:9292/carts/${id}`, {
+      title,
+      description,
+      price,
+      image_url
+    }).then(()=> {
+      alert("product removed from cart")
+    }).catch((error)=>{console.log(error)})
+  }
 
   return (
     <div className="container-card">
@@ -25,7 +47,7 @@ function Cart() {
                 <h2>{item.title}</h2>
                 <h3>{item.price} KES</h3>
               </div>
-              <button>Remove Item</button>
+              <button onClick={() => handleDelete(item)}>Remove Item</button>
             </div>
             <br></br>
           </div>

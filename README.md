@@ -11,6 +11,7 @@
 ### Backend
 - Rails (Sinatra)
 - Ruby language
+- SQLite3 Database
 
 ## Installation 
 - Fork and clone the repository

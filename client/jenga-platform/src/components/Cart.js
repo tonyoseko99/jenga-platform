@@ -8,7 +8,7 @@ function Cart() {
   const [deleteItem, setDeletedItem] = useState([]);
 
   useEffect(() => {
-    getCartItems()
+    getCartItems();
   }, []);
 
   // delete item from cart
@@ -18,17 +18,13 @@ function Cart() {
     });
     result = await result.json();
     console.warn(result);
-    getCartItems()
+    getCartItems();
   }
 
-   // fetch items from cart db table
-  async function getCartItems(){
-    await fetch("http://localhost:9292/carts")
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response);
-        setItems(response);
-      });
+  async function getCartItems() {
+    let result = await fetch("http://localhost:9292/carts");
+    result = await result.json();
+    setItems(result);
   }
 
   return (

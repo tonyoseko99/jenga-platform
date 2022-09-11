@@ -89,8 +89,9 @@ class ApplicationController < Sinatra::Base
 
     # delete item from cart
     delete "/carts/:id" do
-      products = Cart.find(params[:id])
-      products.to_json
+      product = Cart.find(params[:id])
+      product.destroy
+      product.to_json
     end
   
 end

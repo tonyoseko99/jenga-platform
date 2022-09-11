@@ -8,9 +8,17 @@ function Navbar() {
       <nav className="navbar">
           <Link to="/"><h1>Jenga Shop</h1></Link>
         <nav className="nav-items">
-          <Link to="/carts"><FaCartArrowDown /> Cart</Link>
-          <Link to="/login"><button>Login</button></Link>
-          <Link to="/login"><button>Signup</button></Link>
+          {
+            localStorage.getItem('user-info') ?
+            <>
+              <Link to="/carts"><FaCartArrowDown /> Cart</Link>
+              <Link to="/login"><button>Logout</button></Link>
+            </>
+            :
+            <>
+               <Link to="/login"><button>Login</button></Link>
+            </>
+          }
         </nav>
       </nav>
     </div>

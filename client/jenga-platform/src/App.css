@@ -360,7 +360,6 @@ body {
   align-items: flex-start;
   text-align: left;
   justify-content:flex-start;
-  height: 90vh;
 }
 
 .container-card > h1 {
@@ -368,6 +367,9 @@ body {
 }
 
 .card-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   padding: 20px;
   border-bottom: #282c34;
 }
@@ -397,8 +399,15 @@ body {
   width: 100%;
 }
 
+.card-cart > img{
+  height: 100px;
+  width: 100px;
+}
+
 .card-cart div{
   padding: 20px;
+  width: 60%;
+  font-size: 14px;
 }
 
 .card-cart img{

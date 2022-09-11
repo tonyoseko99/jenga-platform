@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -8,6 +7,13 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
+  // to make routes private
+  useEffect(() => {
+    if(localStorage.getItem('user-info')){
+        navigate("/")
+    }
+  }, [])
 
   // handle signup button
   async function signup(e){
@@ -30,7 +36,7 @@ const Login = () => {
   return (
     <div className="login-form">
       <form className="form">
-        <h2 className="title">create account</h2>
+        <h2 className="title">Create Account</h2>
         <div className="user-details">
           <div className="input-box">
             <span className="details"></span>
@@ -66,6 +72,7 @@ const Login = () => {
           <button className="button" onClick={signup}>
             SignUp
           </button>
+          <small>already have an account? <span>Login</span></small>
         </div>
       </form>
       {/* <div className="input-box">

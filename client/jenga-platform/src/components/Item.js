@@ -1,19 +1,18 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { FaProductHunt } from "react-icons/fa";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function Item() {
   const { id } = useParams();
   const [item, setItem] = useState([]);
-  const [cart, addCart] = useState([]);
   const [supplier, setSupplier] = useState([]);
   const [review, setReview] = useState([]);
   const [userReview, setUserReview] = useState([]);
+  const navigate = useNavigate()
 
   // post item
   const handleClick = (item) => {
-    cart.push();
     console.log(item);
     const title = item.title;
     const price = item.price;
@@ -33,6 +32,7 @@ function Item() {
       .catch((error) => {
         console.log(error);
       });
+      navigate("/carts")
   };
 
   useEffect(() => {
@@ -43,7 +43,7 @@ function Item() {
         // returns the product and its properties
         setItem(response);
         // returns the reviews for the product
-        console.log(response.reviews);
+        // console.log(response.reviews);
         setReview(response.reviews);
         
       });
@@ -63,7 +63,7 @@ function Item() {
     fetch(`http://localhost:9292/users/${id}`)
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         setUserReview(response);
       });
   }, [id]);

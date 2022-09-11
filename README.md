@@ -10,6 +10,7 @@
 
 ### Backend
 - Rails (Sinatra)
+- Ruby language
 
 ## Installation 
 - Fork and clone the repository

@@ -1,77 +1,78 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Login = ({onAddUser}) => {
+const Login = () => {
   // state for controlled input fields
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
-  // handle form submission
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const user = {
-      username,
-      email,
-      password,
-    };
-    console.log(user);
-    // notify()
-    // make post request
-    fetch("http://localhost:9292/users", {
+  // handle signup button
+  async function signup(e){
+    e.preventDefault()
+    let item = { username, email, password };
+    console.warn(item);
+    let result = await fetch("http://localhost:9292/users", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(user),
-    } )
-        .then(res => res.json())
-        .then( (res) => onAddUser(res))
-        setUserName("") && setEmail("" ) && setPassword ("")
-    
+      body: JSON.stringify(item),
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+    });
+    result = await result.json()
+    localStorage.setItem("user-info", JSON.stringify(result))
+    navigate("/")
   };
 
   return (
-    <div class="login-form">
-      <form onSubmit={handleSubmit}>
-        <h2 class="title">create account</h2>
-        <div class="user-details">
-          <div class="input-box">
-            <span class="details">Name</span>
+    <div className="login-form">
+      <form className="form">
+        <h2 className="title">create account</h2>
+        <div className="user-details">
+          <div className="input-box">
+            <span className="details"></span>
             <input
               type="text"
               placeholder="username"
               onChange={(e) => setUserName(e.target.value)}
+              value={username}
               required
             />
           </div>
-          <div class="input-box">
-            <span class="details">Email</span>
+          <div className="input-box">
+            <span className="details"></span>
             <input
               type="text"
               placeholder="email"
               onChange={(e) => setEmail(e.target.value)}
+              value={email}
               required
             />
           </div>
 
-          <div class="input-box">
-            <span class="details">Password</span>
+          <div className="input-box">
+            <span className="details"></span>
             <input
               type="password"
               placeholder="password"
               onChange={(e) => setPassword(e.target.value)}
+              value={password}
               required
             />
           </div>
-          <button className="button">SignUp</button>
+          <button className="button" onClick={signup}>
+            SignUp
+          </button>
         </div>
       </form>
-      <div className="go-home">
+      {/* <div className="input-box">
         <a href="/">
           <button className="home-btn">back</button>
         </a>
-      </div>
+      </div> */}
     </div>
   );
 };

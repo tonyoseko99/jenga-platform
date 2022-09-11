@@ -82,7 +82,7 @@ function Item() {
             supplied by: <strong>{supplier.name}</strong>
           </p>
           <p className="quantity">
-            <strong>{supplier.quantity_left}</strong> products in stock
+            <strong>{supplier.quantity_left}</strong> product(s) in stock
           </p>
           <p>
             <strong>{item.price} KES</strong>

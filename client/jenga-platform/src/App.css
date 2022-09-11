@@ -1,4 +1,4 @@
-html{
+html {
   scroll-behavior: smooth;
 }
 .App {
@@ -50,12 +50,16 @@ body {
   background: rgb(255, 255, 255);
 }
 
-.main{
+.main {
   background-color: black;
-  border-bottom: 4px solid black;
+  border-bottom: 4px solid #f9992d;
 }
 
-.main-container{
+.app-container{
+  background: #f0ede9;
+}
+
+.main-container {
   height: 90vh;
   background-image: url("https://images.unsplash.com/photo-1523381294911-8d3cead13475?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
   background-size: cover;
@@ -66,12 +70,12 @@ body {
   justify-content: center;
 }
 
-.main-container h2{
+.main-container h2 {
   font-size: 70px;
   color: white;
 }
 
-.main-container button{
+.main-container button {
   background: #f9992d;
   width: 200px;
   padding: 10px;
@@ -81,7 +85,7 @@ body {
   cursor: pointer;
 }
 
-.main-container button:hover{
+.main-container button:hover {
   background: white;
   color: #f9992d;
   border-radius: 6px solid white;
@@ -89,35 +93,37 @@ body {
 
 .navbar {
   background: black;
-  color: #EDE5F3;
+  color: #ede5f3;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
   margin: 0 300px;
   text-align: center;
+  flex-wrap: wrap;
 }
 
-.nav-items{
+.nav-items {
   display: flex;
   flex-direction: row;
   flex-flow: wrap;
   align-items: center;
 }
 
-.nav-items :first-child{
+.nav-items :first-child {
   margin: 0 10px;
 }
-.navbar a{
+.navbar a {
   font-size: 30px;
   text-decoration: none;
   color: white;
 }
 
-.navbar a:hover{
+.navbar a:hover {
   color: #f9992d;
 }
-.navbar button{
+.navbar button {
   background-color: #282c34;
   color: white;
   border-radius: 5px;
@@ -126,13 +132,13 @@ body {
   cursor: pointer;
 }
 
-.navbar button:hover{
+.navbar button:hover {
   background-color: white;
   border: 1px solid black;
   color: black;
 }
 
-.navbar h1{
+.navbar h1 {
   font-size: 32px;
 }
 
@@ -161,13 +167,13 @@ body {
   color: white;
 }
 
-.app-container > h1{
+.app-container > h1 {
   text-align: center;
   color: #f9992d;
 }
 
 /* login form */
-.login-form form{
+.login-form form {
   height: 90vh;
   display: flex;
   flex-direction: column;
@@ -176,36 +182,36 @@ body {
   width: 100%;
 }
 
-.login-form input{
+.login-form input {
   width: 20%;
   padding: 10px;
   margin: 10px;
   font-size: 18px;
 }
-.login-form small{
+.login-form small {
   font-size: 14px;
   color: blue;
   cursor: pointer;
 }
-.login-form button{
+.login-form button {
   padding: 10px;
   width: 140px;
   font-size: 18px;
   background: #f9992d;
   border: none;
 }
-.login-form button:hover{
-  background: #EDE5F3;
+.login-form button:hover {
+  background: #ede5f3;
   color: orange;
 }
 
-.input-box input{
+.input-box input {
   width: 100%;
 }
 
 /* end of login form */
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -213,7 +219,7 @@ body {
 }
 
 /* search form */
-.app-container .input{
+.app-container .input {
   margin-top: -90px;
   margin-bottom: 50px;
   margin-left: 19%;
@@ -222,7 +228,6 @@ body {
 #search-input {
   width: 75%;
   text-align: center;
-  
   font-size: 22px;
   border: 2px solid black;
   border-radius: 5px;
@@ -234,7 +239,7 @@ body {
 }
 
 /* card section */
-.card-container{
+.card-container {
   margin: 0 200px;
   display: flex;
   flex-direction: row;
@@ -242,7 +247,7 @@ body {
   align-items: center;
 }
 
-.card{
+.card {
   border-radius: 10px;
   background: white;
   margin: 10px;
@@ -252,7 +257,7 @@ body {
   text-decoration: none;
 }
 
-.card div{
+.card div {
   display: flex;
   flex-direction: row;
   flex-flow: wrap;
@@ -260,12 +265,12 @@ body {
   justify-content: space-between;
 }
 
-.card img{
+.card img {
   height: 200px;
   width: 200px;
 }
 
-.card h2{
+.card h2 {
   height: 55px;
   border-bottom: 1px solid black;
   width: 400px;
@@ -273,27 +278,27 @@ body {
   text-decoration: none;
   text-align: center;
 }
-.card p{
+.card p {
   width: 400px;
   height: 200px;
   text-align: left;
   line-height: 20px;
 }
 
-.card button{
+.card button {
   padding: 10px;
   font-size: 18px;
   cursor: pointer;
 }
 
-.card button:hover{
+.card button:hover {
   background: #f9992d;
   color: white;
   border-radius: 5px solid white;
   border: none;
 }
 
-.item{
+.item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -302,7 +307,7 @@ body {
 }
 
 /* reviews page */
-.reviews{
+.reviews {
   background: #f9992d;
   width: 60%;
   padding: 20px;
@@ -312,7 +317,7 @@ body {
   margin-top: -50px;
 }
 
-.card-info{
+.card-info {
   display: flex;
   flex-direction: row;
   flex-flow: nowrap;
@@ -322,51 +327,56 @@ body {
   background: white;
 }
 
-.card-info img{
+.card-info img {
   height: 500px;
   width: 25%;
 }
 
-.card-info div{
+.card-info div {
   width: 35%;
   padding: 0 0 0 50px;
 }
 
-.card-info p{
+.card-info p {
   line-height: 30px;
   font-size: 22px;
 }
 
-.card-info button{
+.card-info button {
   padding: 10px;
   font-size: 18px;
   cursor: pointer;
 }
 
-.card-info button:hover{
+.card-info button:hover {
   background: #f9992d;
   color: white;
   border-radius: 5px solid white;
-  border: none; 
+  border: none;
 }
 
-.card-info h2{
+.card-info h2 {
   font-size: 44px;
   color: #282c34;
 }
 
+#card-container {
+  display: flex;
+  flex-direction: row;
+}
+
 /* cart card */
-.container-card{
+.container-card {
   align-items: flex-start;
   text-align: left;
-  justify-content:flex-start;
+  justify-content: flex-start;
 }
 
 .container-card > h1 {
   text-align: center;
 }
 
-.card-container{
+.card-container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -374,7 +384,7 @@ body {
   border-bottom: #282c34;
 }
 
-.card-container > .card-cart button{
+.card-container > .card-cart button {
   background: #282c34;
   color: white;
   border-radius: 5px solid white;
@@ -385,12 +395,12 @@ body {
   font-size: large;
 }
 
-.card-container > .card-cart button:hover{
+.card-container > .card-cart button:hover {
   background: #f9992d;
   color: white;
 }
 
-.card-cart{
+.card-cart {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -399,30 +409,26 @@ body {
   width: 100%;
 }
 
-.card-cart > img{
+.card-cart > img {
   height: 100px;
   width: 100px;
 }
 
-.card-cart div{
+.card-cart div {
   padding: 20px;
   width: 60%;
   font-size: 14px;
 }
 
-.card-cart img{
+.card-cart img {
   height: 200px;
   width: 25%;
 }
 
-
 /* footer */
 .footer {
-  height: 100px;
   background-color: black;
   color: white;
   padding: 10px;
   text-align: center;
-  margin-top: 0;
-  margin-bottom: 0;
 }

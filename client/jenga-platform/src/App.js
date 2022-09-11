@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Items from "./components/Items";
 import Item from "./components/Item";
 import Cart from "./components/Cart";
-import Login from "./components/Login";
+import Signup from "./components/Signup";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/items" element={<Items />} />
           <Route path="/items/:id" element={<Item />} />
           <Route path="/carts" element={<Cart />} />

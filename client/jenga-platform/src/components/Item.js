@@ -96,7 +96,7 @@ function Item() {
         {review.map((reviewItem) => {
           return(
             <div className="review-item" key={reviewItem.id}>
-              <p><strong>{userReview.username}</strong>: <em>{reviewItem.review_content}</em></p>
+              <p><em>{userReview.username}</em>: <strong>{reviewItem.review_content}</strong></p>
             </div>
             
           )

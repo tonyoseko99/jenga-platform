@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Signup = () => {
   // state for controlled input fields
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
@@ -84,4 +84,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

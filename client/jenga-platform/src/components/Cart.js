@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
+import { Link } from "react-router-dom";
+import Items from "./Items";
 
 function Cart() {
-  const { id } = useParams();
   const [items, setItems] = useState([]);
-  const [deleteItem, setDeletedItem] = useState([]);
 
   useEffect(() => {
     getCartItems();

@@ -6,19 +6,26 @@ function Navbar() {
   return (
     <div className="main">
       <nav className="navbar">
-          <Link to="/"><h1>Jenga Shop</h1></Link>
+        <Link to="/">
+          <h1>Jenga Shop</h1>
+        </Link>
         <nav className="nav-items">
-          {
-            localStorage.getItem('user-info') ?
+          {localStorage.getItem("user-info") ? (
             <>
-              <Link to="/carts"><FaCartArrowDown /> Cart</Link>
-              <Link to="/login"><button>Logout</button></Link>
+              <Link to="/carts">
+                <FaCartArrowDown /> Cart
+              </Link>
+              <Link to="/login">
+                <button>Logout</button>
+              </Link>
             </>
-            :
+          ) : (
             <>
-               <Link to="/login"><button>Login</button></Link>
+              <Link to="/signup">
+                <button>Login</button>
+              </Link>
             </>
-          }
+          )}
         </nav>
       </nav>
     </div>
@@ -26,5 +33,7 @@ function Navbar() {
 }
 export default Navbar;
 
-{/* <a href="/carts"><FaCartArrowDown /> Cart</a>
-        <a className="login-form" href="/login"><button>Login</button></a> */}
+{
+  /* <a href="/carts"><FaCartArrowDown /> Cart</a>
+        <a className="login-form" href="/login"><button>Login</button></a> */
+}

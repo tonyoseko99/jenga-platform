@@ -7,6 +7,7 @@ function Item() {
   const { id } = useParams();
   const [item, setItem] = useState([]);
   const [cart, addCart] = useState([]);
+  const [supplier, setSupplier] = useState([]);
 
   // post item 
   const handleClick = (item) => {
@@ -37,6 +38,15 @@ function Item() {
       });
   }, [id]);
 
+  // supplier information by id
+  useEffect(() => {
+    fetch(`http://localhost:9292/suppliers/${id}`)
+    .then((response) => response.json())
+    .then((response) => {
+      setSupplier(response);
+    })
+  })
+
   return (
     <div className="card-info">
       <img src={item.image_url} alt={item.title}></img>
@@ -44,6 +54,8 @@ function Item() {
         <h2>{item.title}</h2>
         <hr></hr>
         <p>{item.description}</p>
+        <p>supplied by: <strong>{supplier.name}</strong></p>
+        <p className='quantity'><strong>{supplier.quantity_left}</strong> products in stock</p>
         <p>
           <strong>{item.price} KES</strong>
         </p>

@@ -10,7 +10,10 @@ function Home() {
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
-      .then((response) => setItems(response));
+      .then((response) => {
+        console.log(response);
+        setItems(response);
+      });
   }, []);
 
   useEffect(() => {

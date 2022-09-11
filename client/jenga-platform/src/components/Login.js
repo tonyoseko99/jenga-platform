@@ -1,32 +1,79 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-function Login(){
-    const url = ""
-    const [data, setData] = useState({
-        username: "",
-        email: "",
-        password: ""
-    });
-    const handle = (e) => {
-        const newData = {...data};
+const Login = ({onAddUser}) => {
+  // state for controlled input fields
+  const [username, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  
+  // handle form submission
 
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const user = {
+      username,
+      email,
+      password,
+    };
+    console.log(user);
+    // notify()
+    // make post request
+    fetch("http://localhost:9292/users", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(user),
+    } )
+        .then(res => res.json())
+        .then( (res) => onAddUser(res))
+        setUserName("") && setEmail("" ) && setPassword ("")
+    
+  };
 
-    return(
-        <div className="login-form">
-            <form>
-                <input id="username" value={data.username} type="text" placeholder="username"></input>
-                <input id="email" value={data.email} type="email" placeholder="example@mail.com"></input>
-                <input id="password" value={data.password} type="password" placeholder="password"></input>
-                <div>
-                <button>Signup</button> &nbsp;
-                <small>have an account?</small> &nbsp;
-                <button>Login</button>
-                </div>
-            </form>
-            
+  return (
+    <div class="login-form">
+      <form onSubmit={handleSubmit}>
+        <h2 class="title">create account</h2>
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Name</span>
+            <input
+              type="text"
+              placeholder="username"
+              onChange={(e) => setUserName(e.target.value)}
+              required
+            />
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input
+              type="text"
+              placeholder="email"
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input
+              type="password"
+              placeholder="password"
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button className="button">SignUp</button>
         </div>
-    )
-}
+      </form>
+      <div className="go-home">
+        <a href="/">
+          <button className="home-btn">back</button>
+        </a>
+      </div>
+    </div>
+  );
+};
+
 export default Login;

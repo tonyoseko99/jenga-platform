@@ -7,10 +7,22 @@ class ApplicationController < Sinatra::Base
       products.to_json
     end
 
-    # get product by id
+    # get product by id including supplier name
     get "/products/:id" do
       products = Product.find(params[:id])
       products.to_json
+    end
+
+    #get all suppliers
+    get "/suppliers" do
+      suppliers = Supplier.all
+      suppliers.to_json
+    end
+
+    # et supplier by id
+    get "/suppliers/:id" do
+      suppliers = Supplier.find(params[:id])
+      suppliers.to_json
     end
 
     # get all reviews

@@ -10,7 +10,7 @@ class ApplicationController < Sinatra::Base
     # get product by id including supplier name
     get "/products/:id" do
       products = Product.find(params[:id])
-      products.to_json
+      products.to_json(include: :reviews)
     end
 
     #get all suppliers
@@ -32,9 +32,9 @@ class ApplicationController < Sinatra::Base
     end
 
     # get review by id
-    get "/reviews/:product_id" do
-      review = Review.find(params[:product_id])
-      review.to_json
+    get "/reviews/:id" do
+      reviews = Review.find(params[:id])
+      reviews.to_json
     end
 
     # get all users

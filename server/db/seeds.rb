@@ -3,8 +3,10 @@ puts "Seeding begin ......."
 
 # users
 user_one = User.create(username: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
-9.times do User.create(username: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
-end
+user_two = User.create(username: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+user_three = User.create(username: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+user_four = User.create(username: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
+user_five = User.create(username: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
 
 # suppliers
 supplier = Supplier.create(name: Faker::Name.name, quantity_left: rand(1...9))
@@ -32,9 +34,21 @@ end
 
 
 # reviews
-review_one = Review.create(review_content: "this is review content for the product", user_id: user_one.id, product_id: p_1.id)
-review_two = Review.create(review_content: "this is review content for the product", user_id: user_one.id, product_id: p_2.id)
-9.times do Review.create(review_content: "this is review content for the product", user_id: user_one.id, product_id: p_1.id)
-end
+review_one = Review.create(review_content: "I like the product", user_id: user_one.id, product_id: p_1.id)
+review_two = Review.create(review_content: "durable quality...", user_id: user_two.id, product_id: p_1.id)
+review_three = Review.create(review_content: "I like the design of the product", user_id: user_three.id, product_id: p_1.id)
+review_four = Review.create(review_content: "I like the product", user_id: user_one.id, product_id: p_2.id)
+review_five = Review.create(review_content: "durable quality...", user_id: user_four.id, product_id: p_2.id)
+review_six = Review.create(review_content: "I like the design of the product", user_id: user_five.id, product_id: p_2.id)
+review_seven = Review.create(review_content: "I like the product", user_id: user_one.id, product_id: p_3.id)
+review_eight = Review.create(review_content: "durable quality...", user_id: user_two.id, product_id: p_3.id)
+review_nine = Review.create(review_content: "I like the design of the product", user_id: user_three.id, product_id: p_3.id)
+review_ten = Review.create(review_content: "I like the product", user_id: user_four.id, product_id: p_4.id)
+review_eleven = Review.create(review_content: "durable quality...", user_id: user_five.id, product_id: p_4.id)
+review_twelve = Review.create(review_content: "I like the design of the product", user_id: user_one.id, product_id: p_4.id)
+review_13 = Review.create(review_content: "I like the product", user_id: user_two.id, product_id: p_5.id)
+review_14 = Review.create(review_content: "durable quality...", user_id: user_three.id, product_id: p_6.id)
+review_15 = Review.create(review_content: "I like the design of the product", user_id: user_four.id, product_id: p_6.id)
+
 
 puts "Seeding end ....."

@@ -278,6 +278,25 @@ body {
   border: none;
 }
 
+.item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  justify-content: center;
+}
+
+/* reviews page */
+.reviews{
+  background: #f9992d;
+  width: 60%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
 .card-info{
   display: flex;
   flex-direction: row;

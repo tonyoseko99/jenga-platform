@@ -98,6 +98,16 @@ body {
   text-align: center;
 }
 
+.nav-items{
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  align-items: center;
+}
+
+.nav-items :first-child{
+  margin: 0 10px;
+}
 .navbar a{
   font-size: 30px;
   text-decoration: none;

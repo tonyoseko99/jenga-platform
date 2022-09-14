@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { FaProductHunt } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
 
 function Item() {

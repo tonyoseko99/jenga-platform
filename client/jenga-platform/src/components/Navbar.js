@@ -1,8 +1,24 @@
 import React from "react";
 import { FaCartArrowDown } from "react-icons/fa";
-import Home from "./Home";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Signup from "./Signup";
+import Item from "./Item";
 function Navbar() {
+  const navigate = useNavigate();
+  // logout redirect
+  const logout = () => {
+    localStorage.clear();
+    navigate("/");
+  };
+  // redirect to cart
+  const redirectCart = (Item) => {
+    this.handleClick();
+    navigate("/carts");
+  };
+  // redirect to login
+  const login = () => {
+    navigate("/signup");
+  };
   return (
     <div className="main">
       <nav className="navbar">
@@ -15,15 +31,11 @@ function Navbar() {
               <Link to="/carts">
                 <FaCartArrowDown /> Cart
               </Link>
-              <Link to="/login">
-                <button>Logout</button>
-              </Link>
+              <button onClick={logout}>Logout</button>
             </>
           ) : (
             <>
-              <Link to="/signup">
-                <button>Login</button>
-              </Link>
+              <button onClick={login}>Login</button>
             </>
           )}
         </nav>
@@ -32,8 +44,3 @@ function Navbar() {
   );
 }
 export default Navbar;
-
-{
-  /* <a href="/carts"><FaCartArrowDown /> Cart</a>
-        <a className="login-form" href="/login"><button>Login</button></a> */
-}
